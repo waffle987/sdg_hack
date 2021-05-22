@@ -4,6 +4,8 @@ import 'package:sdg_hack/ui/authentication_screens/reset_password_screen.dart';
 import 'package:sdg_hack/ui/authentication_screens/verify_email_screen.dart';
 import 'package:sdg_hack/ui/create_account_screen/create_account_screen.dart';
 import 'package:sdg_hack/ui/login_screen/login_screen.dart';
+import 'package:sdg_hack/ui/merchant_screens/merchant_landing_screen/merchant_landing_screen.dart';
+import 'package:sdg_hack/ui/merchant_screens/merchant_upload_product_screen/merchant_upload_product_screen.dart';
 import 'package:sdg_hack/ui/startup_screen/startup_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -53,15 +55,15 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case RouteNames.MerchantAuthPageRoute:
       return _getPageRoute(
         routeName: settings.name,
-        viewToShow: Scaffold(),
+        viewToShow: MerchantLandingPage(),
       );
 
-    // case RouteNames.MerchantAddContentPageRoute:
-    //   return _getPageRoute(
-    //     routeName: settings.name,
-    //     viewToShow: AddContentPage(),
-    //   );
-    //
+    case RouteNames.MerchantAddContentPageRoute:
+      return _getPageRoute(
+        routeName: settings.name,
+        viewToShow: MerchantUploadProductPage(),
+      );
+
     // case RouteNames.MerchantEditProfilePageRoute:
     //   return _getPageRoute(
     //     routeName: settings.name,

@@ -36,6 +36,15 @@ dependencies:
   flutter_slidable: ^0.6.0
   animator: ^3.0.0
 
+  # Image packages
+  cached_network_image: ^3.0.0
+  image_picker: ^0.7.5
+  flutter_svg: ^0.22.0
+
+  # Util packages
+  uuid: ^3.0.4
+  timeago: ^3.0.2
+
   cupertino_icons: ^1.0.2
   webview_flutter: ^2.0.7
 

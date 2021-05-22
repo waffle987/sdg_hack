@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:hive/hive.dart';
 
-// part 'firestore_user_model.g.dart';
+part 'firestore_user_model.g.dart';
 
 @HiveType(typeId: 1)
 class FirestoreUser {

@@ -1,8 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:sdg_hack/locator.dart';
 import 'package:sdg_hack/managers/dialog_manager.dart';
+import 'package:sdg_hack/models/firestore_user_model.dart';
 import 'package:sdg_hack/router.dart';
 import 'package:sdg_hack/ui/startup_screen/startup_screen.dart';
 
@@ -13,10 +16,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
-  // /// Initialise Hive
-  // await Hive.initFlutter();
-  // Hive.registerAdapter(FirestoreUserAdapter());
-  // await Hive.openBox<FirestoreUser>('auth');
+  /// Initialise Hive
+  await Hive.initFlutter();
+  Hive.registerAdapter(FirestoreUserAdapter());
+  await Hive.openBox<FirestoreUser>('auth');
 
   /// Set device always to portrait
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
@@ -35,6 +38,9 @@ class MyApp extends StatelessWidget {
       title: 'SDG Hack',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        accentColor: Colors.white,
+        floatingActionButtonTheme:
+            FloatingActionButtonThemeData(backgroundColor: Colors.blue),
       ),
       home: StartUpPage(),
       navigatorKey: locator<NavigationService>().navigationKey,
