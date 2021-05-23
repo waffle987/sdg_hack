@@ -5,9 +5,14 @@ class SeeFoodPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(
+          'Food scanner',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
       body: WebView(
-        initialUrl: "http://192.168.1.187:8501",
+        initialUrl: "https://share.streamlit.io/justrach/foodgan/app.py",
         javascriptMode: JavascriptMode.unrestricted,
       ),
     );

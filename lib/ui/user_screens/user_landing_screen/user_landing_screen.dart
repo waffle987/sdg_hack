@@ -2,7 +2,10 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sdg_hack/see_food_screen.dart';
+import 'package:sdg_hack/ui/user_screens/user_find_merchants_screen/user_find_merchant_screen.dart';
 import 'package:sdg_hack/ui/user_screens/user_home_screen/user_home_screen.dart';
+import 'package:sdg_hack/ui/user_screens/user_profile_screen/user_profile_screen.dart';
 import 'package:stacked/stacked.dart';
 
 import 'user_landing_view_model.dart';
@@ -19,6 +22,19 @@ class UserLandingPage extends StatelessWidget {
       onModelReady: (model) => model.addUserProfileToState(),
       viewModelBuilder: () => UserLandingPageViewModel(),
       builder: (_, model, __) => Scaffold(
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: FloatingActionButton(
+          child: Icon(
+            FontAwesomeIcons.camera,
+            color: _themeData.accentColor,
+          ),
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SeeFoodPage(),
+            ),
+          ),
+        ),
         body: PageTransitionSwitcher(
           duration: const Duration(milliseconds: 300),
           reverse: model.reverse,
@@ -41,7 +57,6 @@ class UserLandingPage extends StatelessWidget {
             FontAwesomeIcons.home,
             FontAwesomeIcons.search,
             FontAwesomeIcons.users,
-            FontAwesomeIcons.solidBell,
             FontAwesomeIcons.solidUserCircle,
           ],
           backgroundColor: _themeData.primaryColor,
@@ -49,7 +64,7 @@ class UserLandingPage extends StatelessWidget {
           splashColor: _themeData.accentColor,
           inactiveColor: Colors.white.withOpacity(0.7),
           iconSize: 30.0,
-          gapLocation: GapLocation.none,
+          gapLocation: GapLocation.center,
           activeIndex: model.currentIndex,
           notchSmoothness: NotchSmoothness.softEdge,
           onTap: model.setIndex,
@@ -64,13 +79,11 @@ class UserLandingPage extends StatelessWidget {
       case 0:
         return UserHomePage();
       case 1:
-        return Scaffold();
+        return UserFindMerchantPage();
       case 2:
         return Scaffold();
       case 3:
-        return Scaffold();
-      case 4:
-        return Scaffold();
+        return UserProfilePage();
       default:
         return Scaffold();
     }
