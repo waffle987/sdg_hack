@@ -10,7 +10,7 @@ import 'package:sdg_hack/ui/merchant_screens/merchant_edit_profile_screen/mercha
 import 'package:sdg_hack/ui/merchant_screens/merchant_landing_screen/merchant_landing_screen.dart';
 import 'package:sdg_hack/ui/merchant_screens/merchant_upload_product_screen/merchant_upload_product_screen.dart';
 import 'package:sdg_hack/ui/startup_screen/startup_screen.dart';
-import 'package:sdg_hack/ui/user_screens/user_landing_screen/user_landing_screen.dart';
+import 'package:sdg_hack/ui/user_screens/user_bmi_calculator_screen/user_bmi_calculator_screen.dart';
 import 'package:sdg_hack/ui/user_screens/user_logic_tree/difficulty_committing_screen.dart';
 import 'package:sdg_hack/ui/user_screens/user_logic_tree/feeling_hungry_screen.dart';
 import 'package:sdg_hack/ui/user_screens/user_logic_tree/issues_with_diet_screen.dart';
@@ -56,7 +56,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case RouteNames.UserAuthPageRoute:
       return _getPageRoute(
         routeName: settings.name,
-        viewToShow: UserLandingPage(),
+        viewToShow: BMICalculatorPage(),
       );
 
     ///  Merchant auth pages
@@ -120,7 +120,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
           outcomeSubtitleText:
               'Being unmotivated is common. What may help is knowing '
               'you are not alone in your struggle. Use our social features to get the boost you need!',
-          resultPageColour: Colors.blue,
+          resultPageColour: Colors.red,
           haveBackButton: false,
         ),
       );
@@ -134,7 +134,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
           outcomeSubtitleText:
               'You could be mistaking your thirst for hunger. It is recommended '
               'that you drink 3.7litres of fluids a day for men and 2.7litres of fluids a day for women.',
-          resultPageColour: Colors.blue,
+          resultPageColour: Colors.red,
           haveBackButton: false,
         ),
       );
@@ -148,7 +148,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
           outcomeSubtitleText:
               'Sleep regulates your hunger hormones and sleep deficiency makes'
               ' you feel hungrier. It is recommended you get 7-8 hours of sleep a day.',
-          resultPageColour: Colors.blue,
+          resultPageColour: Colors.red,
           haveBackButton: false,
         ),
       );
@@ -162,7 +162,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
           outcomeSubtitleText:
               'By eating caloric-dense food, you will be less full. Try switching '
               'to less caloric-dense foods to be more fill. (E.g. Switching from full cream milk to low fat milk)',
-          resultPageColour: Colors.blue,
+          resultPageColour: Colors.red,
           haveBackButton: false,
         ),
       );
@@ -176,7 +176,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
           outcomeSubtitleText:
               'You could be comforting your emotions with food. Try taking up '
               'healthy alternatives to reduce stress like yoga or getting professional medical help.',
-          resultPageColour: Colors.blue,
+          resultPageColour: Colors.red,
           haveBackButton: false,
         ),
       );
@@ -191,7 +191,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
               'Drinks such as coffee and alcohol often contain lots of calories'
               ' as well but are not as filling as food. Try switching '
               'out your drinks to lower calorie alternatives such as diet coke or water.',
-          resultPageColour: Colors.blue,
+          resultPageColour: Colors.red,
           haveBackButton: false,
         ),
       );
@@ -204,7 +204,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
           outcomeHeaderText: 'Take note!',
           outcomeSubtitleText:
               'The calories in food served in restaurants may not be accurate and may be higher in calories',
-          resultPageColour: Colors.blue,
+          resultPageColour: Colors.red,
           haveBackButton: false,
         ),
       );
@@ -218,7 +218,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
           outcomeSubtitleText:
               'By exercising very little, you may not be burning enough '
               'calories to be in a deficit to lose weight. Try exercising more or reducing your caloric intake.',
-          resultPageColour: Colors.blue,
+          resultPageColour: Colors.red,
           haveBackButton: false,
         ),
       );
@@ -233,7 +233,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
               'You might be making the common mistake of overestimating how '
               'much calories you burn from exercise. Try lowering your'
               ' caloric intake if you are still unable to lose weight.',
-          resultPageColour: Colors.blue,
+          resultPageColour: Colors.red,
           haveBackButton: false,
         ),
       );
@@ -248,7 +248,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
               "Your body's metabolic rate might have slowed down after losing "
               "weight. Calculate your metabolic rate using your new "
               "weight or simply lower your caloric intake.",
-          resultPageColour: Colors.blue,
+          resultPageColour: Colors.red,
           haveBackButton: false,
         ),
       );
