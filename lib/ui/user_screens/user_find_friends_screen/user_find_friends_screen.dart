@@ -36,6 +36,31 @@ class UserFindFriendsPage extends StatelessWidget {
           SizedBox(width: _mediaQuery.size.width * 0.03),
         ],
       ),
+      body: Column(
+        children: [
+          ListTile(
+            leading: CircleAvatar(
+              child: Icon(FontAwesomeIcons.solidUser),
+            ),
+            title: Text('Rach'),
+            subtitle: Text('Running is fun'),
+          ),
+          ListTile(
+            leading: CircleAvatar(
+              child: Icon(FontAwesomeIcons.solidUser),
+            ),
+            title: Text('Jia Jun'),
+            subtitle: Text('Training for IPPT'),
+          ),
+          ListTile(
+            leading: CircleAvatar(
+              child: Icon(FontAwesomeIcons.solidUser),
+            ),
+            title: Text('Jing Jie'),
+            subtitle: Text('240 KG deadlift'),
+          ),
+        ],
+      ),
     );
   }
 }
