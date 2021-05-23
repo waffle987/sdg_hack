@@ -3,6 +3,7 @@ import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sdg_hack/see_food_screen.dart';
+import 'package:sdg_hack/ui/user_screens/user_find_friends_screen/user_find_friends_screen.dart';
 import 'package:sdg_hack/ui/user_screens/user_find_merchants_screen/user_find_merchant_screen.dart';
 import 'package:sdg_hack/ui/user_screens/user_home_screen/user_home_screen.dart';
 import 'package:sdg_hack/ui/user_screens/user_profile_screen/user_profile_screen.dart';
@@ -81,7 +82,7 @@ class UserLandingPage extends StatelessWidget {
       case 1:
         return UserFindMerchantPage();
       case 2:
-        return Scaffold();
+        return UserFindFriendsPage();
       case 3:
         return UserProfilePage();
       default:
