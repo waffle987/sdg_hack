@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sdg_hack/config/styles.dart';
 import 'package:sdg_hack/models/firestore_user_model.dart';
+import 'package:sdg_hack/ui/user_screens/user_show_merchant_profile_screen/user_show_merchant_profile_screen.dart';
 
 class MerchantListTile extends StatelessWidget {
   final FirestoreUser merchantModel;
@@ -18,7 +19,8 @@ class MerchantListTile extends StatelessWidget {
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => Scaffold(),
+                builder: (context) =>
+                    UserShowMerchantProfilePage(merchantModel: merchantModel),
               ),
             ),
             child: ListTile(

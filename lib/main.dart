@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
         accentColor: Colors.white,
         floatingActionButtonTheme:
-            FloatingActionButtonThemeData(backgroundColor: Colors.blue),
+            FloatingActionButtonThemeData(backgroundColor: Colors.red),
       ),
       home: StartUpPage(),
       navigatorKey: locator<NavigationService>().navigationKey,
