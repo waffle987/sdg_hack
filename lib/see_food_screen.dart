@@ -12,7 +12,7 @@ class SeeFoodPage extends StatelessWidget {
         ),
       ),
       body: WebView(
-        initialUrl: "https://foodgan.herokuapp.com",
+        initialUrl: "https://share.streamlit.io/justrach/foodgan/app.py",
         javascriptMode: JavascriptMode.unrestricted,
       ),
     );
