@@ -2,6 +2,7 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:molten_navigationbar_flutter/molten_navigationbar_flutter.dart';
 import 'package:sdg_hack/see_food_screen.dart';
 import 'package:sdg_hack/ui/user_screens/user_find_friends_screen/user_find_friends_screen.dart';
 import 'package:sdg_hack/ui/user_screens/user_find_merchants_screen/user_find_merchant_screen.dart';
@@ -11,10 +12,17 @@ import 'package:stacked/stacked.dart';
 
 import 'user_landing_view_model.dart';
 
-class UserLandingPage extends StatelessWidget {
-  const UserLandingPage({Key key}) : super(key: key);
+class UserLandingPage extends StatefulWidget {
+   UserLandingPage({Key key}) : super(key: key);
 
   @override
+  State<UserLandingPage> createState() => _UserLandingPageState();
+}
+
+class _UserLandingPageState extends State<UserLandingPage> {
+  @override
+  int currentIndex = 0;
+
   Widget build(BuildContext context) {
     final ThemeData _themeData = Theme.of(context);
 
@@ -25,6 +33,7 @@ class UserLandingPage extends StatelessWidget {
       builder: (_, model, __) => Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.redAccent,
           child: Icon(
             FontAwesomeIcons.camera,
             color: _themeData.accentColor,
@@ -53,14 +62,43 @@ class UserLandingPage extends StatelessWidget {
           },
           child: getViewForIndex(model.currentIndex),
         ),
+        // bottomNavigationBar: MoltenBottomNavigationBar(
+        //   selectedIndex: currentIndex,
+        //   onTabChange: (clickedIndex) {
+        //     setState(() {
+        //       currentIndex = clickedIndex;
+        //       print(currentIndex);
+        //
+        //     });
+        //
+        //   },
+        //   tabs: [
+        //     MoltenTab(
+        //       icon: Icon(FontAwesomeIcons.home),
+        //     ),
+        //     MoltenTab(
+        //       icon: Icon(FontAwesomeIcons.search),
+        //     ),
+        //     MoltenTab(
+        //       icon: Icon(FontAwesomeIcons.camera),
+        //     ),
+        //     MoltenTab(
+        //       icon: Icon(FontAwesomeIcons.users),
+        //     ),
+        //     MoltenTab(
+        //       icon: Icon(FontAwesomeIcons.solidUserCircle),
+        //     ),
+        //   ],
+        // ),
         bottomNavigationBar: AnimatedBottomNavigationBar(
+          // notchAndCornersAnimation: ,
           icons: [
             FontAwesomeIcons.home,
             FontAwesomeIcons.search,
             FontAwesomeIcons.users,
             FontAwesomeIcons.solidUserCircle,
           ],
-          backgroundColor: _themeData.primaryColor,
+          backgroundColor: Colors.redAccent,
           activeColor: _themeData.accentColor,
           splashColor: _themeData.accentColor,
           inactiveColor: Colors.white.withOpacity(0.7),
@@ -71,6 +109,7 @@ class UserLandingPage extends StatelessWidget {
           onTap: model.setIndex,
           //other params
         ),
+
       ),
     );
   }
