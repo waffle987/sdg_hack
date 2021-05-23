@@ -136,6 +136,7 @@ class FirestoreService {
     @required String photoUrl,
     @required String fileName,
     @required String productId,
+    @required String price,
   }) {
     _merchantPostsCollectionReference
         .doc(merchantId)
@@ -147,6 +148,7 @@ class FirestoreService {
       "photoUrl": photoUrl,
       "productId": productId,
       "fileName": fileName,
+      "price": price,
       "likes": {},
     });
   }

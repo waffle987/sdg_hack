@@ -5,13 +5,14 @@ import 'package:sdg_hack/config/styles.dart';
 import 'package:sdg_hack/config/ui_helpers.dart';
 import 'package:sdg_hack/ui/merchant_screens/merchant_upload_product_screen/merchant_upload_product_view_model.dart';
 import 'package:sdg_hack/widgets/input_fields/input_field.dart';
+import 'package:sdg_hack/widgets/input_fields/number_form_field.dart';
 import 'package:stacked/stacked.dart';
 import 'package:status_alert/status_alert.dart';
 
 class MerchantUploadProductPage extends StatelessWidget {
-  final TextEditingController _missionController = TextEditingController();
-  final TextEditingController _missionDescriptionController =
-      TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
+  final TextEditingController _priceController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -32,12 +33,13 @@ class MerchantUploadProductPage extends StatelessWidget {
           onPressed: () {
             model.setModelBusy();
 
-            if (_missionController.text.isNotEmpty &&
-                _missionDescriptionController.text.isNotEmpty &&
+            if (_nameController.text.isNotEmpty &&
+                _descriptionController.text.isNotEmpty &&
                 model.selectedImage != null) {
               model.uploadProduct(
-                name: _missionController.text,
-                description: _missionDescriptionController.text,
+                name: _nameController.text,
+                description: _descriptionController.text,
+                price: _priceController.text,
                 currentUserId: currentUser.id,
               );
 
@@ -71,12 +73,18 @@ class MerchantUploadProductPage extends StatelessWidget {
               verticalSpaceMedium,
               InputField(
                 placeholder: 'Name',
-                controller: _missionController,
+                controller: _nameController,
               ),
               verticalSpaceMedium,
               InputField(
                 placeholder: 'Description',
-                controller: _missionDescriptionController,
+                controller: _descriptionController,
+              ),
+              verticalSpaceMedium,
+              NumberFormField(
+                controller: _priceController,
+                header: 'Price',
+                isInt: false,
               ),
               verticalSpaceMedium,
               Text('Product Image'),

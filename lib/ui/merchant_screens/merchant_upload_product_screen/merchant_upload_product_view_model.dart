@@ -48,6 +48,7 @@ class MerchantUploadProductViewModel extends BaseModel {
     @required String name,
     @required String description,
     @required String currentUserId,
+    @required String price,
   }) async {
     CloudStorageResult storageResult;
     String _productId = Uuid().v4();
@@ -66,6 +67,7 @@ class MerchantUploadProductViewModel extends BaseModel {
       photoUrl: selectedImage != null ? storageResult.imageUrl : '',
       fileName: selectedImage != null ? storageResult.imageFileName : '',
       productId: _productId,
+      price: price,
     );
 
     _navigationService.pop();
