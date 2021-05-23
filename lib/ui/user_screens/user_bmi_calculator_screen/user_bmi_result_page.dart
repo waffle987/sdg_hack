@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sdg_hack/constants.dart';
+import 'package:sdg_hack/ui/user_screens/user_landing_screen/user_landing_screen.dart';
 import 'package:sdg_hack/widgets/buttons/bottom_button.dart';
 import 'package:sdg_hack/widgets/cards/reuseable_card.dart';
 
@@ -60,10 +61,13 @@ class ResultsPage extends StatelessWidget {
             ),
           ),
           BottomButton(
-            buttonTitle: 'RE-CALCULATE',
-            onTap: () {
-              Navigator.pop(context);
-            },
+            buttonTitle: 'DONE',
+            onTap: () => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => UserLandingPage(),
+              ),
+            ),
           )
         ],
       ),

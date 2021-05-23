@@ -219,7 +219,7 @@ class _BMICalculatorPageState extends State<BMICalculatorPage> {
               CalculatorBrain calc =
                   CalculatorBrain(height: height, weight: weight);
 
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                   builder: (context) => ResultsPage(
