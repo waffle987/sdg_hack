@@ -2,6 +2,7 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sdg_hack/ui/merchant_screens/merchant_profile_screen/merchant_profile_screen.dart';
 import 'package:stacked/stacked.dart';
 
 import 'merchant_landing_view_model.dart';
@@ -82,7 +83,7 @@ class MerchantLandingPage extends StatelessWidget {
           ),
         );
       case 1:
-        return Scaffold();
+        return MerchantProfilePage();
       default:
         return Scaffold();
     }

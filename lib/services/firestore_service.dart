@@ -147,7 +147,20 @@ class FirestoreService {
       "photoUrl": photoUrl,
       "productId": productId,
       "fileName": fileName,
+      "likes": {},
     });
+  }
+
+  /// Delete product from Firestore
+  Future deleteProducts({
+    @required String documentId,
+    @required String merchantId,
+  }) async {
+    await _merchantPostsCollectionReference
+        .doc(merchantId)
+        .collection('products')
+        .doc(documentId)
+        .delete();
   }
 
   /// Listen to stream of merchants

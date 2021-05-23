@@ -45,7 +45,7 @@ class MerchantUploadProductPage extends StatelessWidget {
                 context,
                 duration: Duration(seconds: 2),
                 title: 'Success',
-                subtitle: 'You have successfully listed your Challenge!',
+                subtitle: 'You have successfully listed your Product!',
                 configuration: IconConfiguration(icon: FontAwesomeIcons.check),
               );
             } else {
